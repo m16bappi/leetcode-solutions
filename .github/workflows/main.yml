@@ -1,0 +1,19 @@
+name: SSH and Run Command on EC2
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-ssh-command:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Run ls -lh on EC2 instance
+      run: |
+        ssh ubuntu@ec2-52-77-254-51.ap-southeast-1.compute.amazonaws.com> 'ls -lh'
+      continue-on-error: true
