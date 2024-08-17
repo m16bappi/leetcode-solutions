@@ -15,6 +15,5 @@ jobs:
 
     - name: Run ls -lh on EC2 instance
       run: |
-        ssh ubuntu@ec2-52-77-254-51.ap-southeast-1.compute.amazonaws.com << 'EOF'
-          ls -lh
-        EOF
+        cd ~/
+        ls -lh
